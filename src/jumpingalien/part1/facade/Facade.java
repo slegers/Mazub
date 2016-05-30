@@ -7,19 +7,19 @@ public class Facade implements IFacade{
 
 	@Override
 	public Mazub createMazub(int pixelLeftX, int pixelBottomY, Sprite[] sprites) {
-		// TODO Auto-generated method stub
-		return null;
+		return new Mazub(pixelLeftX,pixelBottomY,sprites);
 	}
 
 	@Override
 	public int[] getLocation(Mazub alien) {
-		// TODO Auto-generated method stub
+		int[] location = new int[2];
+		location[0] = alien.getVector().getX();
+		location[1] = alien.getVector().getY();
 		return null;
 	}
 
 	@Override
 	public double[] getVelocity(Mazub alien) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -31,14 +31,15 @@ public class Facade implements IFacade{
 
 	@Override
 	public int[] getSize(Mazub alien) {
-		// TODO Auto-generated method stub
-		return null;
+		int[] size = new int[2];
+		size[0] = alien.getwidth();
+		size[1] = alien.getHeight();
+		return size;
 	}
 
 	@Override
 	public Sprite getCurrentSprite(Mazub alien) {
-		// TODO Auto-generated method stub
-		return null;
+			return alien.getSprites()[0];
 	}
 
 	@Override
@@ -55,26 +56,22 @@ public class Facade implements IFacade{
 
 	@Override
 	public void startMoveLeft(Mazub alien) {
-		// TODO Auto-generated method stub
-		
+		alien.startMoveLeft();
 	}
 
 	@Override
 	public void endMoveLeft(Mazub alien) {
-		// TODO Auto-generated method stub
-		
+		alien.endMoveLeft();
 	}
 
 	@Override
 	public void startMoveRight(Mazub alien) {
-		// TODO Auto-generated method stub
-		
+		alien.startMoveRight();
 	}
 
 	@Override
 	public void endMoveRight(Mazub alien) {
-		// TODO Auto-generated method stub
-		
+		alien.endMoveRight();
 	}
 
 	@Override
